@@ -22,7 +22,7 @@
       padding: 40px;
       border-radius: 16px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      width: 360px;
+      width: 380px;
       position: relative;
     }
 
@@ -60,17 +60,37 @@
       background-color: #adb5bd;
       color: #333;
       right: 40px;
-      pointer-events: none; /* makes it non-clickable */
+      pointer-events: none;
     }
 
     .valentine-img {
       display: none;
-      margin-top: 30px;
+      margin-top: 25px;
     }
 
     .valentine-img img {
       width: 100%;
       border-radius: 14px;
+    }
+
+    .message {
+      display: none;
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #e63946;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
@@ -88,12 +108,17 @@
     <div class="valentine-img" id="imageBox">
       <img src="https://i.imgur.com/6RLbK0F.png" alt="Happy Valentine">
     </div>
+
+    <div class="message" id="message">
+      Happy Valentines Day My Annamma 💖
+    </div>
   </div>
 
   <script>
     const noBtn = document.getElementById("noBtn");
     const yesBtn = document.getElementById("yesBtn");
     const imageBox = document.getElementById("imageBox");
+    const message = document.getElementById("message");
     const container = document.querySelector(".container");
 
     container.addEventListener("mousemove", (e) => {
@@ -116,7 +141,8 @@
 
     yesBtn.addEventListener("click", () => {
       imageBox.style.display = "block";
-      yesBtn.innerText = "Yay! 💘";
+      message.style.display = "block";
+      yesBtn.innerText = "Forever ❤️";
     });
   </script>
 
